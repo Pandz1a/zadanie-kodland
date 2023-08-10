@@ -1,0 +1,263 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #9cfc50;
+    --darkgreen: #5fc10f;
+    --red: #fc2e20;
+    --orange: #fe7f20;
+    --darkorange: #ec6803;
+    --black: #000;
+    --lightblack: #333333;
+    --white: #fff;
+}
+body {
+    font-family: "Delius Swash Caps", cursive;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.header__nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    font-weight: bold;
+    position: relative;
+}
+.header__list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+.footer__list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding-top: 20px;
+    font-weight: bold;
+    position: relative;
+}
+
+.header__list-item {
+    margin: 0 20px;
+    cursor: pointer;
+    position: relative;
+}
+.header__list-item::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    bottom: 0;
+    left: 0;
+    height: 0.15rem;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+    background-color: var(--black);
+}
+
+.header__list-item:hover:after {
+    width: 100%;
+}
+
+.footer__list-item {
+    cursor: pointer;
+}
+
+.header {
+    background-image: url("./images/background2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--red);
+    height: 552px;
+    width: 100%;
+}
+.header__menu{
+    position: relative;
+}
+.header__description {
+    width: 472px;
+    margin-top: 100px;
+}
+.header__popit {
+    font-size: 70px;
+    color: var(--white);
+}
+.header__slogan {
+    font-size: 20px;
+    color: var(--white);
+    width: 360px;
+}
+.header__button {
+    background: var(--green);
+    border: none;
+    width: 200px;
+    padding: 10px;
+    font-weight: bold;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.header__button:hover {
+    background: var(--darkgreen);
+}
+
+.what {
+    text-align: center;
+    padding: 60px;
+}
+.what__text {
+    font-size: 20px;
+    margin-top: 10px;
+}
+.choose {
+    background: var(--green);
+    text-align: center;
+    padding: 50px 0;
+}
+
+.choose__header {
+    font-weight: bolder;
+}
+
+.choose__images {
+    height: 120px;
+    width: auto;
+}
+
+.choose__three {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0;
+}
+.choose__text {
+    margin: 10px;
+    font-weight: bold;
+}
+
+.choose__button {
+    background: var(--orange);
+    border: none;
+    width: 100px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.choose__button:hover {
+    background: var(--darkorange);
+}
+
+.rules {
+    display: flex;
+    margin: 50px 0;
+    background-image: url("./images/bg-grid2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.rules__header {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.rules__text {
+    font-size: 15.6px;
+    margin-right: 30px;
+}
+
+.rules__img-container {
+    flex-basis: 360px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+.rules__img {
+    width: 100%;
+}
+
+.footer__menu {
+    color: var(--white);
+    padding: 20px 0;
+    background: var(--lightblack);
+}
+.footer {
+    background: var(--lightblack);
+}
+
+.green-highlight {
+    background: var(--green);
+}
+
+/* menu hamburgerowe  */
+
+.header__line {
+    width: 25px;
+    height: 2.5px;
+    background: var(--black);
+    margin: 5px;
+    border-radius: 20px;
+    transition: 0.3 ease-in-out;
+}
+
+.header__burger {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: none;
+}
+
+@media screen and (max-width: 680px) {
+    .footer__list {
+        flex-direction: column;
+        text-align: center;
+        line-height: 30px;
+        font-size: 12px;
+    }
+    .rules__header {
+        margin-top: 0;
+    
+    }
+    
+    .rules__img-container {
+        flex-basis: 50%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .header__burger {
+        display: block;
+        transition: 0.3s ease-in-out;
+    }
+    .header__list{
+        position: absolute;
+        top: 40px;
+        right: 0;
+        flex-direction: column;
+        background: var(--white);
+        display: none;
+        font-size: 30px;
+        text-align: center;
+    }
+    .header__list-item{
+        padding: 20px;
+    }
+    .header__list--active{
+        display: flex;
+    }
+    .rules{
+        flex-direction: column;
+    }
+    .rules__header{
+        text-align: center;
+    }
+    .rules__text{
+        text-align: center;
+    }
+    .rules__img-container {
+        margin-top: 20px;
+    }
+}
